@@ -17,8 +17,8 @@ RUN poetry config virtualenvs.create false && \
 # Copy the rest of your application's code into the container
 COPY . /app
 
-# Expose the Streamlit port
-EXPOSE 8501
+# Expose the Streamlit port and the Prometheus metrics port
+EXPOSE 8501 8000
 
 # Command to run on container start
 CMD ["streamlit", "run", "app.py"]

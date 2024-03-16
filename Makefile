@@ -34,9 +34,14 @@ check:
 	@poetry run black .
 	@poetry run mypy .
 
+run-prometheus:
+	@docker network create my-network || true
+	@docker run -d --name my-prometheus --network=my-network -p 9090:9090 \
+	-v $(shell pwd)/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus
+
 build:
 	@$(MAKE) init
 	@echo "Building Docker image..."
 	@docker build -t mohammedaddi/app .
 
-.PHONY: init prepare run check build
+.PHONY: init prepare run check run-prometheus build
