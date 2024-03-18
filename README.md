@@ -25,31 +25,16 @@ This project showcases a Streamlit application that visualizes housing data, fea
    Start by cloning this repository to your local machine.
 
    ```bash
-   git clone https://github.com/your-username/your-repo-name.git
-   cd your-repo-name
-   ```
-
-
-#### Local Environment Setup (Optional)
-
-If you prefer to run the application locally for development:
-
-    Ensure pyenv and Poetry are installed.
-
-    Initialize the project environment:
-
-    ```bash
-    make init
-    make prepare
-    ```
-
+   git clone https://github.com/ai-mohammed/Mohammed-ADDI-MLOps.git
+   cd Mohammed-ADDI-MLOps
+   
 ### Running the Application
 
 #### Using Docker (Recommended)
 
-    The application and Prometheus can be easily run using Docker:
+The application and Prometheus can be easily run using Docker:
 
-    ```bash
+
     # Build the Streamlit app Docker image
     make build
 
@@ -58,25 +43,24 @@ If you prefer to run the application locally for development:
 
     # Run the Prometheus container
     make run-prometheus
-    ```
+    
 Visit http://localhost:8501 for the Streamlit app, and http://localhost:9090 for Prometheus 
 
 #### Locally (For Development)
 
 To run the Streamlit app locally for development purposes:
 
-    ```bash
 
     make run
-    ```
+    
 ### Monitoring with Prometheus
 
 Prometheus is configured to scrape metrics from the Streamlit application. Refer to prometheus.yml for the configuration setup.
 
-    Access Prometheus UI: Navigate to http://localhost:9090.
-    Metrics Exploration: Use Prometheus's query language to explore and visualize metrics from the Streamlit app.
+Access Prometheus UI: Navigate to http://localhost:9090.
+Metrics Exploration: Use Prometheus's query language to explore and visualize metrics from the Streamlit app.
 
 
-Contributing
+### Contributing
 
 I welcome contributions to improve this project. Feel free to fork the repository, make your changes, and submit a pull request. For major changes or enhancements, please open an issue first to discuss your ideas.

@@ -51,4 +51,14 @@ build:
 	@echo "Building Docker image..."
 	@docker build -t mohammedaddi/app .
 
+push:
+	@echo "Tagging Docker image..."
+	@docker tag mohammedaddi/app:latest mohammedaddi/mlops:latest
+	@echo "Pushing Docker image to Docker Hub..."
+	@docker push mohammedaddi/mlops:latest
+
+deploy:
+	@echo "Deploying the Docker image..."
+	docker-compose up -d
+
 .PHONY: init prepare run check run-prometheus build
